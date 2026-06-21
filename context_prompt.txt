@@ -1,0 +1,17 @@
+# Reglas de Estilo para Resume Chatbot
+
+## Principios de Código
+- **Auto-documentación:** Código tan claro que no necesita comentarios triviales
+- **Semántica de Dominio:** Nombres basados en el dominio (resume, work_entry, vector_store_client)
+- **Legibilidad sobre Brevedad:** Nombres de variables explícitos
+- **Estructura:** Seguir estrictamente la separación: `api/` (endpoints) -> `services/` (lógica) -> `db/` (persistencia)
+- **Tipado:** Uso obligatorio de type hints
+- **Documentación:** Docstrings estilo Google con Args, Returns, Raises
+- **Logging:** Usar `structlog.get_logger(__name__)` siempre
+- **Manejo de Errores:** No usar try-except vacíos, registrar y relanzar excepciones
+
+## Comportamiento del Asistente
+- Si una función es compleja, divídela
+- Antes de escribir código, piensa en la atomicidad (SQLAlchemy + ChromaDB)
+- Si no hay un log, añádelo
+- Aplicar patrón Unit of Work para operaciones de escritura atómicas

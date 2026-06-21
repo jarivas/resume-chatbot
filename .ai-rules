@@ -1,0 +1,13 @@
+# Reglas de Estilo para CV API Assistant
+
+## Principios de Código
+- **Legibilidad sobre Brevedad:** Nombres de variables explícitos.
+- **Estructura:** Seguir estrictamente la separación: `api/` (endpoints) -> `services/` (lógica) -> `db/` (persistencia).
+- **Tipado:** Uso obligatorio de type hints.
+- **Documentación:** Docstrings estilo Google.
+- **Logging:** Usar `structlog` siempre.
+
+## Comportamiento del Asistente
+- Si una función es compleja, divídela.
+- Antes de escribir código, piensa en la atomicidad (SQLAlchemy + ChromaDB).
+- Si no hay un log, añádelo.

@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "resume-chatbot"
+version = "0.1.0"
+description = "API REST de alto rendimiento para la gestión, almacenamiento y consulta inteligente de un Currículum Vitae"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.0"
+uvicorn = "^0.31.0"
+pydantic = "^2.0.0"
+sqlalchemy = "^2.0.0"
+aiosqlite = "^0.19.0"
+chromadb = "^0.5.0"
+langchain = "^0.3.0"
+langchain-openai = "^0.2.0"
+openai = "^1.0.0"
+pytest = "^8.0.0"
+pytest-asyncio = "^0.23.0"
+httpx = "^0.27.0"
+ruff = "^0.6.0"
+mypy = "^1.11.0"
+datamodel-code-generator = "^0.25.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
